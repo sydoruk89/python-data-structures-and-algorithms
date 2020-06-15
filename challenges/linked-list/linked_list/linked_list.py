@@ -10,10 +10,28 @@ class Node:
         self.value = value
         self.next_ = next_
 
+    def get_data(self):
+        """
+        Func() returns current value
+        """
+        return self.value
+
+    def get_next(self):
+        """
+        Func() returns next value 
+        """
+        return self.next_
+
     def __str__(self):
+        """
+        return string with the the object instance
+        """
         return f'{self.value} : {self.next_}'
 
     def __repr__(self):
+        """
+        return string with the the object instance
+        """
         return (self.value, self.next_)
 
 
@@ -32,11 +50,24 @@ class LinkedList:
         """ 
         Inserts a value in the beginning of the list
         """
-
         node = Node(value)
         if self.head is not None:
             node.next_ = self.head
         self.head = node
+
+    def includes(self, data):
+        """ 
+        This func returns True if data is in linked list or False if it is not
+
+        """
+        current = self.head
+        found = False
+        while current and found is False:
+            if current.get_data() == data:
+                found = True
+            else:
+                current = current.get_next()
+        return found
 
     def __str__(self):
         return f'Head: {self.head}'
@@ -46,8 +77,4 @@ class LinkedList:
 
 
 list = LinkedList()
-list.insert('2020')
-list.insert('2019')
-list.insert('2018')
 
-print(list.includes('2089'))
