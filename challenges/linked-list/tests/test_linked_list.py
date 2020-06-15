@@ -26,6 +26,15 @@ def test_insert_mult_nodes():
     assert list.head.next_.value == '2019'
     
 
+def test_if_data_in_list():
+    list = LinkedList()
+    list.insert('2020')
+    list.insert('2019')
+    list.insert('2018')
+    assert list.includes('2020') == True
+    assert list.includes('2021') == False
+
+
 def test_all_values():
     list = LinkedList()
     list.insert('2020')
