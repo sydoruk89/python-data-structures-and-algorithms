@@ -46,6 +46,12 @@ class LinkedList:
         """
         self.head = None
 
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield node
+            node = node.next_
+
     def insert(self, value):
         """ 
         Inserts a value in the beginning of the list
@@ -69,12 +75,47 @@ class LinkedList:
                 current = current.get_next()
         return found
 
+    def append(self, value):
+        """
+        Insert a new element at the end of the list.
+        """
+        node = Node(value)
+        current = self.head
+        if not self.head:
+            self.head = node
+            return
+        while current.next_:
+            current = current.next_
+        current.next_ = node
+
+    def insert_after(self, val, new_val):
+        """
+        Insert a new element after the given value
+        """
+        current = self.head
+        if not current:
+            raise Exception('List is empty')
+        while current:
+            if current.value == val:
+                break
+            current = current.next_
+        if not current:
+            raise Exception(f'Node with value {val} not found!')
+        else:
+            node = Node(new_val)
+            node.next_ = current.next_
+            current.next_ = node
+
     def __str__(self):
         return f'Head: {self.head}'
  
     def __repr__(self):
         return f'{self.head}'
-
+    
 
 list = LinkedList()
-
+a = list.append(1)
+b = list.append(2)
+c = list.append(3)
+d = list.insert_after(2, 4)
+print(list)
