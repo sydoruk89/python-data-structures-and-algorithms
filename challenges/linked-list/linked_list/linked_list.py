@@ -106,6 +106,18 @@ class LinkedList:
             node.next_ = current.next_
             current.next_ = node
 
+    def get_at_end_index(k):
+        """ 
+        Return the node’s value that is k from the end of the linked list
+        """
+        current = self.head
+        count = 0
+        while current:
+            if count == k:
+                return current.value
+            count += 1
+            current = current.next
+
     def __str__(self):
         return f'Head: {self.head}'
  
