@@ -14,7 +14,7 @@ def test_insert_node():
     list = LinkedList()
     list.insert('Tue')
     assert list.head.value == 'Tue'
-    assert list.head.next_ == None
+    assert list.head.next == None
     
 
 def test_insert_mult_nodes():
@@ -23,7 +23,7 @@ def test_insert_mult_nodes():
     list.insert('2019')
     list.insert('2018')
     assert list.head.value == '2018'
-    assert list.head.next_.value == '2019'
+    assert list.head.next.value == '2019'
     
 
 def test_if_data_in_list():
@@ -40,4 +40,48 @@ def test_all_values():
     list.insert('2020')
     list.insert('2019')
     list.insert('2018')
-    assert str(list) == 'Head: 2018 : 2019 : 2020 : None'
+    assert str(list) == '2018 -> 2019 -> 2020 -> None'
+
+
+def test_append():
+    list = LinkedList(['2017', '2018'])
+    list.append('2019')
+    list.append('2020')
+    assert (str(list).strip('[]')) == '2017 -> 2018 -> 2019 -> 2020 -> None'
+
+
+def test_isert_before():
+    list = list = LinkedList(['2017', '2018', '2020', '2021'])
+    list.insert_before('2020', '2019')
+    assert (str(list).strip('[]')) == '2017 -> 2018 -> 2019 -> 2020 -> 2021 -> None'
+
+
+def test_insert_before_first():
+    list = list = LinkedList(['2017', '2018', '2019'])
+    list.insert_before('2017', '2016')
+    assert (str(list).strip('[]')) == '2016 -> 2017 -> 2018 -> 2019 -> None'
+    assert list.head.value == '2016'
+
+
+def test_insert_after():
+    list = LinkedList(['2017', '2019'])
+    list.insert_after('2017', '2018')
+    assert (str(list).strip('[]')) == '2017 -> 2018 -> 2019 -> None'
+
+
+def test_insert_after_last():
+    list = LinkedList(['2018', '2019'])
+    list.insert_after('2019', '2020')
+    assert (str(list).strip('[]')) == '2018 -> 2019 -> 2020 -> None'
+
+
+def test_remove_node():
+    list = LinkedList(['2018', '2019', '2020'])
+    list.remove_node('2019')
+    assert (str(list).strip('[]')) == '2018 -> 2020 -> None'
+
+
+def test_remove_node_beginning():
+    list = LinkedList(['2018', '2019'])
+    list.remove_node('2018')
+    assert (str(list).strip('[]')) == '2019 -> None'
