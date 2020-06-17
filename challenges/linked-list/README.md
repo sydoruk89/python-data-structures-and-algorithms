@@ -7,10 +7,11 @@
 * Method <b>.insertBefore(value, newVal)</b> which add a new node with the given newValue immediately before the first value node
 * Method <b>.insertAfter(value, newVal)</b> which add a new node with the given newValue immediately after the first value node
 * Method <b>.remove_node(value)</b> which remove node with given value.
+* Method <b>.get_at_end_index(n):</b> which return a node from the end at nth index.
 
 ## Approach & Efficiency
 * For first part of the  challenge I inserted a data at the beginning of the linked list. In this case time O(1) and space O(n).
-* For the second part (append, includes, insert_before, insert_after, remove_node) - time O(n), Space(n). 
+* For the second part (append, includes, insert_before, insert_after, remove_node, get_at_end_index) - time O(n), Space(n). 
 
 # Solution
 <img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/challenge-6.jpg">

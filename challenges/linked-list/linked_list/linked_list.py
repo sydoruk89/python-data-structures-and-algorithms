@@ -153,37 +153,28 @@ class LinkedList:
 
         raise Exception(f'Node with value {val} not found')
 
-    def get_at_end_index(self, k):
-        """ 
-        Return the node’s value that is k from the end of the linked list
-        """
-        current = self.head
-        count = 0
-        while current:
-            if count == k:
-                return current.value
-            count += 1
-            current = current.next
-            
-    def reverse(self, list):
+    def get_at_end_index(self, n):
         prev = None
         current = self.head
-        follow = current.next_
+        follow = current.next
         while current:
-            current.next_ = prev
+            current.next = prev
             prev = current
             current = follow
             if follow:
-                follow = follow.next_
+                follow = follow.next
         self.head = prev
 
-    
+        count = 0
+        for el in self:
+            if count == n:
+                return el.value
+            count += 1
+        raise Exception(f'Node at index {n} is out of range!')
+
 
 list = LinkedList()
 a = list.insert('1')
-b = list.insert('3')
+k = list.get_at_end_index(0)
 print(list)
-a = list.includes('0')
-print(a)
-list.insert_after('3', '2')
-print(list)
+print(k)
