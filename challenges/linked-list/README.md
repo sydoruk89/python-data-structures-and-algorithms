@@ -13,5 +13,6 @@
 * For first part of the  challenge I inserted a data at the beginning of the linked list. In this case time O(1) and space O(n).
 * For the second part (append, includes, insert_before, insert_after, remove_node, get_at_end_index) - time O(n), Space(n). 
 
-# Solution
+# Solutions
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/linked-list.png">
 <img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/challenge-6.jpg">
