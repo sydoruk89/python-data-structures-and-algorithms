@@ -171,10 +171,3 @@ class LinkedList:
                 return el.value
             count += 1
         raise Exception(f'Node at index {n} is out of range!')
-
-
-list = LinkedList()
-a = list.insert('1')
-k = list.get_at_end_index(0)
-print(list)
-print(k)
