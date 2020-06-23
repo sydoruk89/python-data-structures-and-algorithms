@@ -9,3 +9,4 @@ Write a function called mergeLists which takes two linked lists as arguments. Zi
 * For this algorithm space Big O(1) and time O(n). To solve this problem I used if statements to check if any of the lists are empty. Then if lists are equal I used while loop (while next element of each lists) and swaped elements. Before that I created a new variable temp to protect elements from being lost elements from the second array. Furthermore, I used if statements in case if one of lists is shorter.
 
 # Solutions
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/merge_lists.png">
