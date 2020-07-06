@@ -91,9 +91,10 @@ def merge_list(list_1, list_2):
 
     if not current_2.next:
         current_1.next, current_2.next = current_2, current_1.next
+        print(current_2, 'here')
         return list_1.head
 
-list = LinkedList(['1', '3', '2'])
+list = LinkedList(['1', '3', '5'])
 print(list)
-list_1 = LinkedList(['5', '9', '4'])
+list_1 = LinkedList(['2', '4', '6'])
 print(merge_list(list, list_1))

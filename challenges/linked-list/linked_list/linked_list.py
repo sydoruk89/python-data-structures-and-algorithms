@@ -69,7 +69,6 @@ class LinkedList:
         if self.head is not None:
             node.next = self.head
         self.head = node
-
     def includes(self, data):
         """ 
         This func returns True if data is in linked list or False if it is not
