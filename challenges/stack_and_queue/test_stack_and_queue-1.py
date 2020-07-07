@@ -45,5 +45,31 @@ def test_exceptions_():
         stack.peek()
     
 def test_enqueue():
-    pass
+    q = Queue()
+    q.enqueue('1')
+    q.enqueue('2')
+    assert q.__str__() == '1 -> 2'
     
+def test_is_empty():
+    q = Queue()
+    assert q.is_empty() == True
+
+def test_peek():
+    q = Queue()
+    q.enqueue('1')
+    q.enqueue('2')
+    q.enqueue('3')
+    assert q.peek() == '1'
+
+def test_dequeue():
+    q = Queue()
+    q.enqueue('1')
+    q.enqueue('2')
+    q.enqueue('3')
+    assert q.dequeue().__str__() == '1 -> None'
+    assert q.dequeue().__str__() == '2 -> None'
+
+def test_dequeue_empty():
+    q = Queue()
+    with pytest.raises(Exception):
+        q.dequeue()
