@@ -11,4 +11,4 @@ dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then
 For the enqueue method time big O(1) and space big O(1). For the dequeue method time big O(n) and space big O(n)
 
 # Solutions
-<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/queue_with_stack.png">
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/fifo.png">
