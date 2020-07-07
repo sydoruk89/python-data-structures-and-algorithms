@@ -76,7 +76,3 @@ class Queue:
             return True
         else:
             return False
-
-q = Queue()
-q.enqueue('1')
-print(q)
