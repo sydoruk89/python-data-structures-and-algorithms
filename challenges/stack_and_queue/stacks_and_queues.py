@@ -1,12 +1,23 @@
 class Node:
+    """
+    Node class initilizing
+    """
     def __init__(self, value, next=None):
+        """
+        Init node instance with value and next element
+        """
         self.value = value
         self.next = next
 
     def __str__(self):
+        """ Return an object instance
+        """
         return f'{self.value} -> {self.next}'
 
     def __repr__(self):
+        """
+        Return an object instance
+        """
         return f'{self.value}'
 
 
@@ -46,33 +57,56 @@ class Stack:
 
 
 class Queue:
-    def __init__(self):
+    """class Queue"""
+
+    def __init__(self, next=None):
+        """Initiate class"""
+
+        self.front = None
         self.rear = None
 
-    def __str__(self):
-        return f'{self.rear}'
+    def __str__(self) -> str:
+        """Informal string representation
+        """
+        output = []
+        curr = self.front
+        while curr is not None:
+            output.append(curr.value)
+            curr = curr.next
+        return " -> ".join(output)
     
-    def enqueue(self, value):
-        prev = self.rear
-        new_node = Node(value)
-
-    def dequeue(self):
-        if self.front:
-            temp = self.front
-            front = self.front.next
-            temp.next = None
-            return temp.value
-        else:
-            raise Exception('Queue is empty')
-
-    def peek(self):
-        if self.front:
-            return self.front.value
-        else:
-            raise Exception('There is no front!')
 
     def is_empty(self):
-        if self.front is None:
+        """method to check if Queue is empty"""
+
+        if self.front == None:
             return True
+        return False
+
+
+    def enqueue(self, val):
+        """Method that adds an element to the end of the queue"""
+
+        if self.is_empty():
+            self.front = self.rear = Node(val)
         else:
-            return False
+            new_node = Node(val)
+            self.rear.next, self.rear = new_node, new_node
+
+    def dequeue(self):
+        """Method that removes the node from the front of the queue, and returns its value."""
+
+        if not self.is_empty():
+            temp = self.front
+            self.front = self.front.next
+            temp.next = None
+            return temp
+        else:
+            raise Exception('Queue is empty!')
+
+    def peek(self):
+        """Method returns the value of the front node"""
+
+        if not self.is_empty():
+            return self.front.value
+        return None
