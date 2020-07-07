@@ -48,4 +48,4 @@ Define a method called isEmpty that takes no argument, and returns a boolean ind
   - peek method that does not take an argument and returns the value of the node;
   - isEmpty - method that takes no argument, and returns a boolean indicating whether or not the queue is empty.
 
-### [Link to code]()
+### [Link to code](https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/challenges/stack_and_queue/stacks_and_queues.py)
