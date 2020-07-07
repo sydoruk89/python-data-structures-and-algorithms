@@ -10,3 +10,6 @@
 * [Binary search](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/array-binary-search)
 * [Linked list](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/linked-list)
 * [Merge 2 linked lists](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/ll_merge)
+* [Stacks and queues](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/stack_and_queue)
+* [Queue with two Stacks](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/queue_with_stacks)
+* [First-in, First out Animal Shelter](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/fifo_animal_shelter)
