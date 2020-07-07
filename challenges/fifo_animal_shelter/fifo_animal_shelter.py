@@ -1,9 +1,3 @@
-class Node:
-    """ Node class"""
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
 class Queue:
     """class Queue"""
 
@@ -12,6 +6,7 @@ class Queue:
 
         self.front = None
         self.rear = None
+    
 
     def is_empty(self):
         """method to check if Queue is empty"""
@@ -68,27 +63,29 @@ class AnimalShelter:
     """Class  which holds only dogs and cats instances"""
     def __init__(self):
         """Method to initiate Animal shelter instance with creating two empty Queues"""
-        self.queue1 = Queue()
-        self.queue2 = Queue()
-
+        self.cats = Queue()
+        self.dogs = Queue()
+        self.animals = Queue()
+    
     def enqueue(self, animal):
         """Method to add animal to the shelter"""
-        if isinstance(animal, Cat) or isinstance(animal, Dog):
-            self.queue1.enqueue(animal)
+        if animal.type == 'cat':
+            self.cats.enqueue(animal)
+            self.animals.enqueue(animal)
+        elif animal.type == 'dog':
+            self.dogs.enqueue(animal)
+            self.animals.enqueue(animal)
         else:
-            return 'Animal must be cat or dog'
+            raise Exception('Must be a cat or a dog!')
 
-    def dequeue(self, pref):
+    def dequeue(self, pref=None):
         """Returns either a dog or a cat. If pref is not "dog" or "cat" then return None"""
-        taken_animal = None
-
-        while not self.queue1.is_empty():
-            if self.queue1.front.type == pref.lower() and taken_animal == None:
-                taken_animal = self.queue1.dequeue()
-            else:
-                self.queue2.enqueue(self.queue1.dequeue())
-
-        while not self.queue2.is_empty():
-            self.queue1.enqueue(self.queue2.dequeue())
-
-        return taken_animal
+        if not pref:
+            pet = self.animals.dequeue()
+        elif pref.lower() == 'cat':
+            pet = self.cats.dequeue()
+        elif pref.lower() == 'dog':
+            pet = self.dogs.dequeue()
+        else:
+            raise Exception('Must be a cat or a dog')
+        return pet
