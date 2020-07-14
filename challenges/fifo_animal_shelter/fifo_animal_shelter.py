@@ -1,3 +1,25 @@
+class Node:
+    """
+    Node class initilizing
+    """
+    def __init__(self, value, next=None):
+        """
+        Init node instance with value and next element
+        """
+        self.value = value
+        self.next = next
+
+    def __str__(self):
+        """ Return an object instance
+        """
+        return f'{self.value} -> {self.next}'
+
+    def __repr__(self):
+        """
+        Return an object instance
+        """
+        return f'{self.value}'
+
 class Queue:
     """class Queue"""
 
@@ -16,15 +38,14 @@ class Queue:
         return False
 
 
-    def enqueue(self, new_node):
+    def enqueue(self, val):
         """Method that adds an element to the end of the queue"""
 
         if self.is_empty():
-            self.front = new_node
-            self.rear = new_node
+            self.front = self.rear = Node(val)
         else:
-            self.rear.next = new_node
-            self.rear = new_node
+            new_node = Node(val)
+            self.rear.next, self.rear = new_node, new_node
 
     def dequeue(self):
         """Method that removes the node from the front of the queue, and returns it value."""

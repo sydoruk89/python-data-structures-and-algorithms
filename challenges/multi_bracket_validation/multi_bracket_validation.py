@@ -73,5 +73,3 @@ def multi_bracket_validation(input):
             if stack.is_empty() or stack.pop() != i:
                 return False
     return stack.is_empty()
-
-print(multi_bracket_validation('n'))
