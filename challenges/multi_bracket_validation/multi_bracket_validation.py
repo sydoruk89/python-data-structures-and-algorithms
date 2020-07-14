@@ -19,4 +19,4 @@ def multi_bracket_validation(input):
     else:
         return True
 
-print(multi_bracket_validation('('))
+print(multi_bracket_validation('(mm'))
