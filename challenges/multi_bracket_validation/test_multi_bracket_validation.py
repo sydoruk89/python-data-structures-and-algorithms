@@ -13,7 +13,10 @@ import pytest
     ('{', False),
     ('(', False),
     ('[', False),
-    ('', False)
+    ('', False),
+    ('m', False),
+    ('{k', False),
+    ('{(hey}', False)
 ])
 
 def test_multi_bracket(input, bool):

@@ -67,6 +67,8 @@ def multi_bracket_validation(input):
             stack.push('}')
         elif i == '[':
             stack.push(']')
+        elif stack.is_empty():
+                return False
         elif i == ')' or i == '}' or i == ']':
             if stack.is_empty() or stack.pop() != i:
                 return False
