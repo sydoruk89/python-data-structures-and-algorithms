@@ -11,4 +11,4 @@ Curly Brackets : {}
 For this function  time big O(n) and space big O(1).
 
 # Solutions
-<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/fifo_shelter.png">
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/multi_bracket.png">
