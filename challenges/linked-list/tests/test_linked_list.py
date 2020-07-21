@@ -87,24 +87,43 @@ def test_remove_node_beginning():
     list.remove_node('2018')
     assert (str(list).strip('[]')) == '2019 -> None'
 
+
 def test_idx_out_of_range():
     with pytest.raises(Exception):
         list = LinkedList(['2018', '2019'])
         list.get_at_end_index(2)
 
+
 def test_idx_and_len_list_same():
     list = LinkedList(['2018', '2019', '2020'])
     list.get_at_end_index(2)
+
 
 def test_idx_negative():
     with pytest.raises(Exception):
         list = LinkedList(['2018', '2019', '2020'])
         list.get_at_end_index(-1)
 
+
 def test_list_with_one_el():
     list = LinkedList(['2020'])
     list.get_at_end_index(0)
 
+
 def test_middle_idx():
     list = LinkedList(['2016', '2017', '2018', '2020', '2021'])
     list.get_at_end_index(2)
+  
+
+def test_circular_list():
+    list = LinkedList(['1', '2', '3', '4', '5'])
+    actual = list.eeney_meeney_miney_moe(2)
+    expected = '3'
+    assert actual == expected
+
+
+def test_circular_list_0ne_el():
+    list = LinkedList(['1'])
+    actual = list.eeney_meeney_miney_moe(2)
+    expected = '1'
+    assert actual == expected
