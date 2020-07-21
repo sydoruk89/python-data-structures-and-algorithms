@@ -30,7 +30,7 @@ class LinkedList:
 
     def __init__(self, nodes=None):
         """
-        This is my initialize of LinkedList
+        This is my initialization of LinkedList
         """
         self.head = None
         if nodes is not None:
@@ -170,3 +170,18 @@ class LinkedList:
                 return el.value
             count += 1
         raise Exception(f'Node at index {n} is out of range!')
+
+    def eeney_meeney_miney_moe(self, k: int) -> str:
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = self.head
+        current = prev = self.head
+        count = 0
+        while current.next != current:
+            count += 1
+            if not count % k:
+                prev.next = current.next
+            prev, current = current, current.next
+        return current.value
+
