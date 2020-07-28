@@ -3,72 +3,60 @@ from tree import BinaryTree, BST, Node
 
 
 def test_tree_with_single_node():
-    bst = BST(1)
-    actual = bst.pre_order()
-    expected = [1]
-    assert actual == expected
-
-
-def test_left_right_child():
-    bst = BST(3)
-    bst.add(1)
-    bst.add(4)
-    actual = bst.pre_order()
-    expected = [3, 1, 4]
-    assert actual == expected
+    tree = BinaryTree(1)
+    assert tree != None
 
 
 def test_pre_order():
-    bst = BST(7)
-    bst.add(4)
-    bst.add(3)
-    bst.add(2)
-    bst.add(5)
-    bst.add(9)
-    bst.add(10)
-    assert bst.pre_order() == [7, 4, 3, 2, 5, 9, 10]
+    tree = BST(3)
+    tree.add(1)
+    tree.add(4)
+    actual = tree.print_tree("pre_order")
+    expected = '3-1-4-'
+    assert actual == expected
 
 
 def test_in_order():
-    bst = BST(7)
-    bst.add(4)
-    bst.add(3)
-    bst.add(2)
-    bst.add(5)
-    bst.add(9)
-    bst.add(10)
-    assert bst.in_order() == [2, 3, 4, 5, 7, 9, 10]
+    tree = BST(7)
+    tree.add(4)
+    tree.add(3)
+    tree.add(2)
+    tree.add(5)
+    tree.add(9)
+    tree.add(10)
+    assert tree.print_tree('in_order') == '2-3-4-5-7-9-10-'
 
 
 def test_post_order():
-    bst = BST(7)
-    bst.add(4)
-    bst.add(3)
-    bst.add(2)
-    bst.add(5)
-    bst.add(9)
-    bst.add(10)
-    assert bst.post_order() == [2, 3, 5, 4, 10, 9, 7]
-
-
-def test_max_val():
-    bst = BST(7)
-    bst.add(4)
-    bst.add(3)
-    bst.add(2)
-    bst.add(5)
-    assert bst.find_maximum_value() == 7
+    tree = BST(7)
+    tree.add(4)
+    tree.add(3)
+    tree.add(2)
+    tree.add(5)
+    tree.add(9)
+    tree.add(10)
+    assert tree.print_tree('post_order') == '2-3-5-4-10-9-7-'
 
 
 def test_max_val_one_el():
-    bst = BST(7)
-    assert bst.find_maximum_value() == 7
+    tree = BinaryTree(7)
+    assert tree.find_maximum_value() == 7
 
 
-def test_breadth_first():
-    tree = BinaryTree(3)
-    tree.root.left = Node(5)
-    tree.root.right = Node(7)
-    tree.root.right.right = Node(9)
-    tree.root.left.left = Node(1)
-    assert tree.breadth_first == [3, 5, 7, 9, 1]
+def test_max_val():
+    tree = BinaryTree(2)
+    tree.root = Node(-1)
+    tree.root.left = Node(4)
+    tree.root.left.left = Node(7)
+    tree.root.left.left.left = Node(3)
+    tree.root.left.left.left.left = Node(8)
+    assert tree.find_maximum_value() == 8
+
+
+def test_max_val_same_el():
+    tree = BinaryTree(1)
+    tree.root.left = Node(-3)
+    tree.root.left.left = Node(-3)
+    tree.root.left.left.left = Node(-3)
+    tree.root.left.left.left.left = Node(-3)
+    assert tree.find_maximum_value() == 1

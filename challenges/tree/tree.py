@@ -3,10 +3,10 @@ class Node:
     Node class which instantiates node value with right or left direction
 
     """
-    def __init__(self, value, left=None, right=None):
+    def __init__(self, value):
         self.value = value
-        self.left = left
-        self.right = right
+        self.left = None
+        self.right = None
         self.next = None
 
 
@@ -71,72 +71,70 @@ class BinaryTree:
     def __init__(self, root):
         self.root = Node(root)
 
-    def pre_order(self):
+    def print_tree(self, traversal_type):
+        if traversal_type == "pre_order":
+            return self.pre_order(self.root, "")
+        elif traversal_type == "in_order":
+            return self.in_order(self.root, "")
+        elif traversal_type == "post_order":
+            return self.post_order(self.root, "")
+        else:
+            print("Traversal type " + str(traversal_type) + " is not supported.")
+            return False
+
+    def pre_order(self, start, traversal):
         """
          Traverse through binary tree in next order: root >> left >> right
         """
-        otput = []
-
-        def traverse(node):
-            if not node:
-                return
-            otput.append(node.value)
-
-            traverse(node.left)
-
-            traverse(node.right)
-
-        traverse(self.root)
-
-        return otput
+        if start:
+            traversal += (str(start.value) + "-")
+            traversal = self.pre_order(start.left, traversal)
+            traversal = self.pre_order(start.right, traversal)
+        return traversal
     
-    def in_order(self):
+    def in_order(self, start, traversal):
         """
          Traverse through binary tree in next order: left >> root >> right
         """
-        otput = []
+        if start:
+            traversal = self.in_order(start.left, traversal)
+            traversal += (str(start.value) + "-")
+            traversal = self.in_order(start.right, traversal)
+        return traversal
 
-        def traverse(node):
-            if not node:
-                return
-            traverse(node.left)
-
-            otput.append(node.value)
-
-            traverse(node.right)
-
-        traverse(self.root)
-
-        return otput
-
-    def post_order(self):
+    def post_order(self, start, traversal):
         """
          Traverse through binary tree in next order: left >> right >> root
         """
-        otput = []
-
-        def traverse(node):
-            if not node:
-                return
-
-            traverse(node.left)
-
-            traverse(node.right)
-
-            otput.append(node.value)
-
-        traverse(self.root)
-
-        return otput
+        if start:
+            traversal = self.post_order(start.left, traversal)
+            traversal = self.post_order(start.right, traversal)
+            traversal += (str(start.value) + "-")
+        return traversal
 
     def find_maximum_value(self):
         """
         This method returns the max value of the BST
         """
-        current = self.root
-        while current.right:
-            current = current.right
-        return current.value
+        q = Queue()
+       
+        if not self.root:
+            return None
+
+        max_val = self.root.value
+        q.enqueue(self.root)
+
+        while not q.is_empty():
+            node_front = q.dequeue().value
+            if node_front.value > max_val:
+                max_val = node_front.value
+
+            if node_front.left:
+                q.enqueue(node_front.left)
+            if node_front.right:
+                q.enqueue(node_front.right)
+
+        return max_val
     
     def breadth_first(self):
         """
@@ -208,10 +206,3 @@ class BST(BinaryTree):
 
         traverse(self.root, key)
 
-
-tree = BinaryTree(3)
-tree.root.left = Node(5)
-tree.root.right = Node(7)
-tree.root.right.right = Node(9)
-tree.root.left.left = Node(1)
-print(tree.breadth_first())
