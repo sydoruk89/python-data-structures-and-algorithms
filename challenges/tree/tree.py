@@ -1,24 +1,13 @@
-class Node_q:
+class Node:
     """
-    Node class initilizing
+    Node class which instantiates node value with right or left direction
+
     """
-    def __init__(self, value, next=None):
-        """
-        Init node instance with value and next element
-        """
+    def __init__(self, value, left=None, right=None):
         self.value = value
-        self.next = next
-
-    def __str__(self):
-        """ Return an object instance
-        """
-        return f'{self.value} -> {self.next}'
-
-    def __repr__(self):
-        """
-        Return an object instance
-        """
-        return f'{self.value}'
+        self.left = left
+        self.right = right
+        self.next = None
 
 
 class Queue:
@@ -51,7 +40,7 @@ class Queue:
         """Method that adds an element to the end of the queue"""
 
         if self.is_empty():
-            self.front = self.rear = Node_q(val)
+            self.front = self.rear = Node(val)
         else:
             new_node = Node(val)
             self.rear.next, self.rear = new_node, new_node
@@ -73,17 +62,6 @@ class Queue:
         if not self.is_empty():
             return self.front.value
         return None
-
-
-class Node:
-    """
-    Node class which instantiates node value with right or left direction
-
-    """
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
 
 
 class BinaryTree:
@@ -168,7 +146,7 @@ class BinaryTree:
         breadth.enqueue(self.root)
         output = []
         while breadth.peek():
-            output.append(breadth.peek())
+            output.append(breadth.peek().value)
             node = breadth.dequeue()
             if node.left:
                 breadth.enqueue(node.left)
@@ -230,12 +208,10 @@ class BST(BinaryTree):
 
         traverse(self.root, key)
 
-        
-bst = BST(7)
-bst.add(4)
-bst.add(3)
-bst.add(2)
-bst.add(5)
-bst.add(9)
-bst.add(11)
-print(bst.breadth_first())
+
+tree = BinaryTree(3)
+tree.root.left = Node(5)
+tree.root.right = Node(7)
+tree.root.right.right = Node(9)
+tree.root.left.left = Node(1)
+print(tree.breadth_first())

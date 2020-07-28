@@ -1,24 +1,16 @@
 import pytest
-from tree import BinaryTree, BST
-
-
-def test_instantiate_empty_tree():
-    actual = BinaryTree()
-    expected = None
-    assert actual != expected
+from tree import BinaryTree, BST, Node
 
 
 def test_tree_with_single_node():
-    bst = BST()
-    bst.add(1)
+    bst = BST(1)
     actual = bst.pre_order()
     expected = [1]
     assert actual == expected
 
 
 def test_left_right_child():
-    bst = BST()
-    bst.add(3)
+    bst = BST(3)
     bst.add(1)
     bst.add(4)
     actual = bst.pre_order()
@@ -27,8 +19,7 @@ def test_left_right_child():
 
 
 def test_pre_order():
-    bst = BST()
-    bst.add(7)
+    bst = BST(7)
     bst.add(4)
     bst.add(3)
     bst.add(2)
@@ -39,8 +30,7 @@ def test_pre_order():
 
 
 def test_in_order():
-    bst = BST()
-    bst.add(7)
+    bst = BST(7)
     bst.add(4)
     bst.add(3)
     bst.add(2)
@@ -51,8 +41,7 @@ def test_in_order():
 
 
 def test_post_order():
-    bst = BST()
-    bst.add(7)
+    bst = BST(7)
     bst.add(4)
     bst.add(3)
     bst.add(2)
@@ -63,8 +52,7 @@ def test_post_order():
 
 
 def test_max_val():
-    bst = BST()
-    bst.add(7)
+    bst = BST(7)
     bst.add(4)
     bst.add(3)
     bst.add(2)
@@ -73,6 +61,14 @@ def test_max_val():
 
 
 def test_max_val_one_el():
-    bst = BST()
-    bst.add(7)
+    bst = BST(7)
     assert bst.find_maximum_value() == 7
+
+
+def test_breadth_first():
+    tree = BinaryTree(3)
+    tree.root.left = Node(5)
+    tree.root.right = Node(7)
+    tree.root.right.right = Node(9)
+    tree.root.left.left = Node(1)
+    assert tree.breadth_first == [3, 5, 7, 9, 1]
