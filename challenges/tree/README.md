@@ -5,8 +5,8 @@
 ## Challenge
 - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 - Create a BinaryTree class
-Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
-
+    - Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+    - Write an instance method called find-maximum-value
 ## Approach & Efficiency
 * In this challenge I used recursion;
 * The Big O time complexity of a Binary Search Tree is O(h), or O(height);
@@ -19,6 +19,7 @@ Define a method for each of the depth first traversals called preOrder, inOrder,
     - pre_order method
     - in_order method
     - post_order method
+    - find-maximum-value method
 * class BST(BinaryTree)
     - add method
     - contains method

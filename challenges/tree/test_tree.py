@@ -60,3 +60,19 @@ def test_post_order():
     bst.add(9)
     bst.add(10)
     assert bst.post_order() == [2, 3, 5, 4, 10, 9, 7]
+
+
+def test_max_val():
+    bst = BST()
+    bst.add(7)
+    bst.add(4)
+    bst.add(3)
+    bst.add(2)
+    bst.add(5)
+    assert bst.find_maximum_value() == 7
+
+
+def test_max_val_one_el():
+    bst = BST()
+    bst.add(7)
+    assert bst.find_maximum_value() == 7
