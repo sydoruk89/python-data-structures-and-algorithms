@@ -23,3 +23,6 @@
 * class BST(BinaryTree)
     - add method
     - contains method
+    
+## Solution for find max value
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/bt_max_val.png">
