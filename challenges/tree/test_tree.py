@@ -60,3 +60,32 @@ def test_max_val_same_el():
     tree.root.left.left.left = Node(-3)
     tree.root.left.left.left.left = Node(-3)
     assert tree.find_maximum_value() == 1
+
+
+def test_breadth_first_bt():
+    tree = BinaryTree(4)
+    tree.root.left = Node(5)
+    tree.root.right = Node(7)
+    tree.root.left.left = Node(9)
+    tree.root.right.right = Node(3)
+    tree.root.right.right.right = Node(8)
+    assert tree.print_tree('breadth_first') == '4-5-7-9-3-8-'
+
+
+def test_breadth_first_left():
+    tree = BinaryTree(2)
+    tree.root.left = Node(1)
+    tree.root.left.left = Node(1)
+    tree.root.left.left.left = Node(1)
+    assert tree.print_tree('breadth_first') == '2-1-1-1-'
+
+
+def test_breadth_first_bst():
+    tree = BST(7)
+    tree.add(4)
+    tree.add(3)
+    tree.add(2)
+    tree.add(5)
+    tree.add(9)
+    tree.add(10)
+    assert tree.print_tree('breadth_first') == '7-4-9-3-5-10-2-'

@@ -11,6 +11,7 @@
 * In this challenge I used recursion;
 * The Big O time complexity of a Binary Search Tree is O(h), or O(height);
 * The Big O space complexity of a BST search would be O(1).
+* The Big O space complexity of a BST breadth_first would be O(n) and time O(h)
 
 
 ## API 
@@ -20,9 +21,12 @@
     - in_order method
     - post_order method
     - find-maximum-value method
+    - breadth_first method
 * class BST(BinaryTree)
     - add method
     - contains method
     
 ## Solution for find max value
 <img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/bt_max_val.png">
+
+## Solution for Breadth First method
