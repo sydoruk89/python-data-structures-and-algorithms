@@ -30,3 +30,4 @@
 <img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/bt_max_val.png">
 
 ## Solution for Breadth First method
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/breadth_first.png">
