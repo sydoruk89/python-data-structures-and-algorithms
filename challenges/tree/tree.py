@@ -78,6 +78,8 @@ class BinaryTree:
             return self.in_order(self.root, "")
         elif traversal_type == "post_order":
             return self.post_order(self.root, "")
+        elif traversal_type == "breadth_first":
+            return self.breadth_first()
         else:
             print("Traversal type " + str(traversal_type) + " is not supported.")
             return False
@@ -140,17 +142,20 @@ class BinaryTree:
         """
         This method returns a list of the values in the tree in the order they were encountered
         """
-        breadth = Queue()
-        breadth.enqueue(self.root)
-        output = []
-        while breadth.peek():
-            output.append(breadth.peek().value)
-            node = breadth.dequeue()
-            if node.left:
-                breadth.enqueue(node.left)
-            if node.right:
-                breadth.enqueue(node.right)
-        return output
+        if not self.root:
+            return None
+
+        q = Queue()
+        q.enqueue(self.root)
+        nodes = ''
+        while not q.is_empty():
+            node_front = q.dequeue().value
+            nodes += str(node_front.value) + "-"
+            if node_front.left:
+                q.enqueue(node_front.left)
+            if node_front.right:
+                q.enqueue(node_front.right)
+        return nodes
  
 
 class BST(BinaryTree):
@@ -205,4 +210,5 @@ class BST(BinaryTree):
                     traverse(node.right, key)
 
         traverse(self.root, key)
+
 
