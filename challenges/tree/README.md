@@ -7,6 +7,8 @@
 - Create a BinaryTree class
     - Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
     - Write an instance method called find-maximum-value
+    - Write an instance method called find-maximum-value
+    - Write a breadth first traversal method which takes a Binary Tree as its unique input.
 ## Approach & Efficiency
 * In this challenge I used recursion;
 * The Big O time complexity of a Binary Search Tree is O(h), or O(height);
