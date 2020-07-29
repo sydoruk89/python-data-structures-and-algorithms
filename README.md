@@ -14,3 +14,4 @@
 * [Queue with two Stacks](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/queue_with_stacks)
 * [First-in, First out Animal Shelter](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/fifo_animal_shelter)
 * [Multi bracket validation](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/multi_bracket_validation)
+* [Trees](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/tree)
