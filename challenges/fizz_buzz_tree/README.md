@@ -20,7 +20,4 @@ Set the values of each of the new nodes depending on the corresponding node valu
     - def recursive(current)
     
 ## Solution for find max value
-<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/bt_max_val.png">
-
-## Solution for Breadth First method
-<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/breadth_first.png">
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/fizz_buzz.png">
