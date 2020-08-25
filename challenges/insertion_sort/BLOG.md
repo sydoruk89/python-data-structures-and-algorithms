@@ -1,7 +1,7 @@
 # Selection Sort
 
 ## Solution
-<img src="https://github.com/sydoruk89/data-structures-and-algorithms/blob/master/assets/arra_shift.jpg">
+<img src="https://github.com/sydoruk89/data-structures-and-algorithms/blob/master/assets/insertion_sort.png">
 
 ## Efficency
 Time: O(n^2) \
