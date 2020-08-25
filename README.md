@@ -15,3 +15,5 @@
 * [First-in, First out Animal Shelter](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/fifo_animal_shelter)
 * [Multi bracket validation](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/multi_bracket_validation)
 * [Trees](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/tree)
+* [Insertion sort](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/insertion_sort)
+* [Merge sort](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/merge_sort)
