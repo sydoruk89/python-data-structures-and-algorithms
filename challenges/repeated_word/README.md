@@ -1,4 +1,4 @@
-# FizzBuzz Tree
+# Repeated words
 
 ## Authors: Roman Sydoruk
 
