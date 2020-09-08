@@ -17,3 +17,4 @@
 * [Trees](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/tree)
 * [Insertion sort](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/insertion_sort)
 * [Merge sort](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/merge_sort)
+* [Repeated words](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/repeated_word)
