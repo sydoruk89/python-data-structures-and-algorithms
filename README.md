@@ -19,3 +19,4 @@
 * [Merge sort](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/merge_sort)
 * [Repeated words](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/repeated_word)
 * [Tree intersection](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/tree_intersection)
+* [Left join](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/left_join)
