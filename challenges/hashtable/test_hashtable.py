@@ -36,3 +36,17 @@ def test_single_hash_fail():
     actual = hashtable.get('roger')
     expected = 44
     assert actual != expected
+
+def test_contains_true():
+    hashtable = Hashtable()
+    hashtable.add('roger', 45)
+    actual = hashtable.contains('roger')
+    expected = True
+    assert actual == expected
+
+def test_contains_false():
+    hashtable = Hashtable()
+    hashtable.add('roger', 45)
+    actual = hashtable.contains('roger')
+    expected = False
+    assert actual == expected
