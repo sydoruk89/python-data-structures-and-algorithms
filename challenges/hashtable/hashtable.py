@@ -37,3 +37,16 @@ class Hashtable:
         while current:
             if current.value[0] == key:
                 return current.value[1]
+
+    def contains(self, key):
+        hashed_key = self._hash(key)
+
+        bucket = self._buckets[hashed_key]
+
+        current = bucket.head
+
+        while current:
+            if current.value[0] == key:
+                return True
+            else:
+                return False
