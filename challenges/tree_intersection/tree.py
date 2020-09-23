@@ -68,7 +68,7 @@ class BinaryTree:
     """
     BinaryTree class instantiation with pre_order, in_order and post_order methods.
     """
-    def __init__(self, root):
+    def __init__(self, root=None):
         self.root = Node(root)
 
     def print_tree(self, traversal_type):
