@@ -14,4 +14,4 @@ Without utilizing any of the built-in library methods available to your language
 
     
 ## Solution for find max value
-<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/tree_insertion.png">
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/tree_intersertion.png">
