@@ -7,10 +7,10 @@ Write a function based on the specifications above, which takes in a graph, and 
 
 
 ## Approach & Efficiency
-* The Big O time complexity is O(V+E);
-* The Big O space complexity would be  O(V + E), where VV is the number of vertices and EE is the number of edges.
+* The Big O time complexity is O(n^2);
+* The Big O space complexity would be  O(1)
 
 
     
 ## Solution
-<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/graphs_breadth_first.png">
+<img src="https://github.com/sydoruk89/python-data-structures-and-algorithms/blob/master/assets/get_edges.png">s
