@@ -10,8 +10,8 @@ def get_edge(graph, city_list):
             if el.node==city_list[i+1]:
                 cost += el.weight
                 trip = 'True'
+                break
             else:
                 trip = 'False'
-    if trip == 'False':
-        cost = 0
+                cost = 0
     return f'{trip}, ${str(cost)}'

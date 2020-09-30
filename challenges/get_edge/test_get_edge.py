@@ -78,3 +78,13 @@ def test_2_way():
     graph.add_edge(city_1, city_3, 200)
     graph.add_edge(city_2, city_1, 150)
     assert get_edge(graph, [city_1, city_2, city_1]) == 'True, $300'
+
+def test_extra_edges(): 
+    graph = Graph()
+    city_1 = graph.add_node('Seattle')
+    city_2 = graph.add_node('Portland')
+    city_3 = graph.add_node('San')
+    graph.add_edge(city_1, city_2, 150)
+    graph.add_edge(city_1, city_3, 200)
+    graph.add_edge(city_2, city_3, 200)
+    assert get_edge(graph, [city_1, city_2]) == 'True, $150'
