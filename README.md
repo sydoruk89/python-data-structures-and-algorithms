@@ -25,3 +25,4 @@
 * [Graph breadth-first](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/breadth_first)
 * [Graph get edges](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/get_edge)
 * [Graphs depth-first](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/depth_first)
+* [Quick sort](https://github.com/sydoruk89/python-data-structures-and-algorithms/tree/master/challenges/quick_sort)
